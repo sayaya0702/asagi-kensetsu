@@ -161,6 +161,9 @@ ul{list-style:none;padding:0}
   .nav-open .nav-toggle span:nth-child(2){opacity:0}
   .nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);background:#fff}
   .nav-open{overflow:hidden}
+  /* メニュー表示中はヘッダーを透明に、ロゴを白く反転して視認性確保 */
+  .nav-open .header{background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .nav-open .brand img{filter:brightness(0) invert(1);opacity:.95}
 }
 .drawer{display:none}
 @media(max-width:1080px){.drawer{display:flex}}
