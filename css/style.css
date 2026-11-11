@@ -253,6 +253,10 @@ ul{list-style:none;padding:0}
 .card__desc{font-size:.92rem;color:var(--sumi-700);line-height:1.85}
 .card__list{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.4rem}
 .card__list li{font-size:.75rem;color:var(--asagi-800);background:rgba(21,86,94,.07);border-radius:999px;padding:.3em .8em}
+.services__note{margin-top:clamp(1.6rem,3vw,2.4rem);text-align:center;font-size:.95rem;color:var(--sumi-700);background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.5rem;line-height:2}
+.services__note b{color:var(--asagi-800);font-weight:700}
+.services__note a{display:inline-block;color:var(--asagi-700);font-weight:600;margin-left:.3em;white-space:nowrap;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--asagi-500)}
+.services__note a:hover{color:var(--asagi-800)}
 
 /* ---------- Philosophy (reversed band) ---------- */
 .philosophy{position:relative;overflow:hidden;text-align:center}
