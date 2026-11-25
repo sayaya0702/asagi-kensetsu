@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261125g">
+<link rel="stylesheet" href="css/style.css?v=20261125h">
 </head>
 <body>
 
@@ -82,7 +82,12 @@
     "1":{ cat:"INTERIOR", title:"飲食店の内装工事",
       img:"assets/photos/work-restaurant.jpg",
       spec:{ "工事内容":"内装工事", "作業時間":"3日", "対応エリア":"関東圏", "カテゴリ":"内装" },
-      body:"壁・床の全面リニューアルはもちろん、壁や床の一部だけの部分施工にも対応しています。お客様のご要望に合わせて、必要な範囲を柔軟に施工いたします。" }
+      body:"壁・床の全面リニューアルはもちろん、壁や床の一部だけの部分施工にも対応しています。お客様のご要望に合わせて、必要な範囲を柔軟に施工いたします。" },
+    "2":{ cat:"INTERIOR", title:"集合住宅一室の内装工事",
+      before:"assets/photos/work-apartment-before.jpg",
+      after:"assets/photos/work-apartment-after.jpg",
+      spec:{ "工事内容":"内装工事", "作業時間":"7日", "対応エリア":"関東圏", "カテゴリ":"内装" },
+      body:"床・壁の張り替えはもちろん、下地から丁寧に施工。お部屋全体を、清潔で明るく快適な空間へと一新しました。" }
   };
   function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
   var id=(new URLSearchParams(location.search)).get("id");
@@ -93,8 +98,11 @@
   document.title=d.title+" | 施工実績 | 浅葱建設株式会社";
   var rows="";
   for(var k in d.spec){ rows+='<dt>'+esc(k)+'</dt><dd>'+esc(d.spec[k])+'</dd>'; }
+  var media = (d.before&&d.after)
+    ? '<div class="ba"><div class="ba__item"><img src="'+d.before+'" alt="施工前" onerror="this.style.display=\'none\'"><span class="ba__tag">BEFORE</span></div><div class="ba__item"><img src="'+d.after+'" alt="施工後" onerror="this.style.display=\'none\'"><span class="ba__tag ba__tag--after">AFTER</span></div></div>'
+    : '<div class="detail__media"><img src="'+d.img+'" alt="'+esc(d.title)+'" onerror="this.style.display=\'none\'"><span class="work__cat" style="position:absolute;top:1rem;left:1rem">'+esc(d.cat)+'</span></div>';
   var html='<div class="detail">'
-    +'<div class="detail__media"><img src="'+d.img+'" alt="'+esc(d.title)+'" onerror="this.style.display=\'none\'"><span class="work__cat" style="position:absolute;top:1rem;left:1rem">'+esc(d.cat)+'</span></div>'
+    +media
     +'<div class="detail__grid">'
     +'<dl class="spec detail__spec">'+rows+'</dl>'
     +'<div class="detail__text"><p>'+esc(d.body)+'</p></div>'
