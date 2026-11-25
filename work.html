@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261125a">
+<link rel="stylesheet" href="css/style.css?v=20261125b">
 </head>
 <body>
 
@@ -78,20 +78,11 @@
 <script src="js/main.js"></script>
 <script>
 (function(){
-  // TODO: 実際の施工事例（写真・内容）に差し替え
   var DATA = {
-    "1":{ cat:"RENOVATION", title:"戸建て住宅 リノベーション",
-      img:"assets/photos/p-reno-house.jpg",
-      spec:{ "工事内容":"内装・水回り改修", "作業時間":"約5日", "対応エリア":"関東圏", "カテゴリ":"リフォーム" },
-      body:"築年数の経過した戸建て住宅を、暮らしに合わせてリノベーション。内装の一新と水回りの刷新により、快適で機能的な住まいへと生まれ変わりました。既存を活かしながら、丁寧な下地づくりと仕上げで、長く安心して暮らせる空間に仕上げています。" },
-    "2":{ cat:"BUILDING", title:"店舗 新装工事",
-      img:"assets/photos/p-store.jpg",
-      spec:{ "工事内容":"建築・内装工事", "作業時間":"約2週間", "対応エリア":"関東圏", "カテゴリ":"建築" },
-      body:"新規開業に合わせた店舗の新装工事。建築から内装まで一貫して対応し、業態やブランドに合わせた空間づくりを行いました。動線や照明計画にも配慮し、お客様の想いをかたちにしています。" },
-    "3":{ cat:"FACILITY", title:"オフィス 空調・電気設備工事",
-      img:"assets/photos/p-office.jpg",
-      spec:{ "工事内容":"空調・電気設備", "作業時間":"約3日", "対応エリア":"関東圏", "カテゴリ":"設備・電気" },
-      body:"オフィス移転に伴う空調設備と電気設備の工事。業務用空調の設置と配線・分電盤の整備を行い、快適で安全な職場環境を整えました。稼働への影響を抑えるよう、スケジュールにも配慮して施工しています。" }
+    "1":{ cat:"INTERIOR", title:"飲食店の内装工事",
+      img:"assets/photos/work-restaurant.jpg",
+      spec:{ "工事内容":"内装工事", "作業時間":"3日", "対応エリア":"関東圏", "カテゴリ":"内装" },
+      body:"壁・床の全面リニューアルはもちろん、壁や床の一部だけの部分施工にも対応しています。お客様のご要望に合わせて、必要な範囲を柔軟に施工いたします。" }
   };
   function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
   var id=(new URLSearchParams(location.search)).get("id");
