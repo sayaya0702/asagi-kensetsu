@@ -136,7 +136,7 @@ ul{list-style:none;padding:0}
 .nav a:hover::after{width:100%}
 .header-cta{display:flex;align-items:center;gap:1rem}
 .tel-link{display:flex;flex-direction:column;line-height:1.15;text-align:right}
-.tel-link .num{font-family:var(--font-en);font-size:1.15rem;font-weight:600;color:var(--asagi-800);letter-spacing:.02em}
+.tel-link .num{font-family:var(--font-en);font-size:1.12rem;font-weight:600;color:var(--asagi-800);letter-spacing:.01em;white-space:nowrap}
 .tel-link .lbl{font-size:.68rem;color:var(--sumi-500)}
 .nav-toggle{display:none;width:44px;height:44px;flex-direction:column;justify-content:center;gap:5px;align-items:center}
 .nav-toggle span{width:24px;height:2px;background:var(--sumi-900);transition:.3s var(--ease)}
@@ -229,7 +229,7 @@ ul{list-style:none;padding:0}
 .mini-stat .n{font-family:var(--font-serif);font-size:1.9rem;color:var(--asagi-700);font-weight:700;line-height:1}
 .mini-stat .t{font-size:.82rem;color:var(--sumi-500);margin-top:.4rem}
 .about__visual{position:relative}
-.about__visual img{border-radius:var(--radius);box-shadow:var(--shadow)}
+.about__visual img{filter:drop-shadow(0 18px 38px rgba(12,47,53,.16))}
 /* about visual frame removed per request */
 @media(max-width:860px){.about__wrap{grid-template-columns:1fr}.about__visual{order:-1;max-width:420px}}
 
@@ -453,8 +453,8 @@ ul{list-style:none;padding:0}
 .blog__grid--few{grid-template-columns:repeat(auto-fill,minmax(300px,380px));justify-content:center}
 .post__img--logo{background:var(--washi);aspect-ratio:16/10}
 .post__img--logo img{object-fit:contain;padding:1.3rem;mix-blend-mode:multiply}
-.detail__media--logo{background:var(--washi)}
-.detail__media--logo img{object-fit:contain;padding:clamp(1.6rem,5vw,3rem);mix-blend-mode:multiply}
+.detail__media.detail__media--logo{background:var(--washi)}
+.detail__media.detail__media--logo img{object-fit:contain;padding:clamp(1.6rem,5vw,3rem);mix-blend-mode:multiply}
 .post__body{padding:1.3rem 1.4rem 1.6rem}
 .post__meta{display:flex;gap:.8rem;align-items:center;font-size:.76rem;color:var(--sumi-500);margin-bottom:.5rem}
 .post__cat{background:rgba(25,180,198,.13);color:var(--asagi-700);padding:.2em .8em;border-radius:999px}
