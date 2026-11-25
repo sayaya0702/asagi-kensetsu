@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261125b">
+<link rel="stylesheet" href="css/style.css?v=20261125c">
 </head>
 <body>
 
@@ -78,34 +78,12 @@
 <script src="js/main.js"></script>
 <script>
 (function(){
-  // TODO: 実際の記事に差し替え
   var P = {
-    "1":{cat:"施工事例",date:"2026.03.20",title:"戸建て住宅のリノベーション事例",
-      img:"assets/photos/p-reno-house.jpg",
-      body:["築年数の経過した戸建て住宅を、暮らしに合わせてリノベーションしました。水回りと内装を一新し、快適で機能的な住まいへと生まれ変わっています。",
-      "施工のポイントは、既存を活かしながら丁寧な下地づくりを行うこと。仕上がりの美しさと耐久性を両立させるために、一つひとつの工程を妥協なく進めました。",
-      "リフォーム・リノベーションをご検討の方は、まずはお気軽にご相談ください。現地を確認したうえで、最適なプランをご提案いたします。"]},
-    "2":{cat:"お知らせ",date:"2026.03.01",title:"浅葱建設株式会社を設立いたしました",
-      img:"assets/photos/p-building.jpg",
+    "1":{cat:"お知らせ",date:"2026.11.19",title:"浅葱建設株式会社を設立いたしました",
+      img:"assets/logo-emblem.png", logo:true,
       body:["このたび、浅葱建設株式会社を設立いたしました。改修・リフォーム・建築・土木・電気工事を手がける総合建設会社として、地域の皆さまに誠実な施工をお届けしてまいります。",
       "「確かな技術で、地域の未来をつくる。」を合言葉に、大きな工事から小さな修繕まで、同じ誠実さで向き合います。",
-      "今後とも浅葱建設株式会社をよろしくお願い申し上げます。"]},
-    "3":{cat:"技術情報",date:"2026.02.15",title:"内装工事で気をつけたい下地づくり",
-      img:"assets/photos/p-interior.jpg",
-      body:["内装の仕上がりの美しさは、実は「下地づくり」で決まります。表からは見えない部分だからこそ、丁寧な施工が仕上がりと耐久性を左右します。",
-      "私たちは、下地の平滑さや乾燥、素材の相性までしっかりと確認したうえで仕上げに進みます。見えないところに手を抜かない——それが長持ちする施工の基本です。"]},
-    "4":{cat:"技術情報",date:"2026.02.01",title:"安全な電気工事のために",
-      img:"assets/photos/p-electrical.jpg",
-      body:["分電盤の更新やEV充電設備の設置など、電気工事は安全性が何よりも大切です。資格を持った技術者が、法令にのっとり安全・確実に施工します。",
-      "老朽化した設備はトラブルや事故の原因にもなります。気になる点があれば、早めの点検・更新をおすすめします。"]},
-    "5":{cat:"施工事例",date:"2026.01.20",title:"店舗の新装工事を承りました",
-      img:"assets/photos/p-store.jpg",
-      body:["新規開業に合わせた店舗の新装工事を承りました。建築から内装まで一貫して対応し、業態やブランドに合わせた空間づくりを行いました。",
-      "動線や照明計画にも配慮し、お客様の想いをかたちに。ワンストップで対応できるからこそ、スムーズな進行と細やかな調整が可能です。"]},
-    "6":{cat:"お知らせ",date:"2026.01.10",title:"オフィスの空調・電気設備工事",
-      img:"assets/photos/p-office.jpg",
-      body:["オフィス移転に伴う空調設備と電気設備の工事を行いました。快適な職場環境づくりを、設備・電気工事の両面からサポートしています。",
-      "業務への影響を抑えるよう、スケジュールにも配慮して施工しました。設備のご相談もお気軽にお問い合わせください。"]}
+      "今後とも浅葱建設株式会社をよろしくお願い申し上げます。"]}
   };
   function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
   var id=(new URLSearchParams(location.search)).get("id");
@@ -116,7 +94,7 @@
   document.getElementById("p-title").textContent=d.title;
   document.title=d.title+" | ブログ | 浅葱建設株式会社";
   var html='<article class="detail detail--article">'
-    +'<div class="detail__media"><img src="'+d.img+'" alt="'+esc(d.title)+'" onerror="this.style.display=\'none\'"></div>'
+    +'<div class="detail__media'+(d.logo?' detail__media--logo':'')+'"><img src="'+d.img+'" alt="'+esc(d.title)+'" onerror="this.style.display=\'none\'"></div>'
     +'<div class="detail__text">';
   d.body.forEach(function(p){ html+='<p>'+esc(p)+'</p>'; });
   html+='</div>'
