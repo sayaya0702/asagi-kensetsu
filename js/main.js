@@ -102,17 +102,28 @@
     });
   });
 
-  /* ---- Contact form (static demo) ---- */
+  /* ---- Contact form -> mailto (info@asagi-kensetsu.co.jp) ---- */
   var form = document.getElementById("contactForm");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      var g = function (n) { var el = form.elements[n]; return el ? String(el.value).trim() : ""; };
+      var subject = "【お問い合わせ】" + (g("type") || "ご相談") + "／" + g("name");
+      var body =
+        "お名前： " + g("name") + "\n" +
+        "会社名： " + g("company") + "\n" +
+        "電話番号： " + g("tel") + "\n" +
+        "メール： " + g("email") + "\n" +
+        "ご相談内容： " + g("type") + "\n" +
+        "--------------------------------\n" +
+        g("message") + "\n";
+      var mailto = "mailto:info@asagi-kensetsu.co.jp?subject=" +
+        encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
       var msg = document.getElementById("formMsg");
       msg.classList.add("show");
-      form.querySelector('button[type="submit"]').disabled = true;
       msg.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
-      // TODO: 実際の送信先（メール送信/フォームサービス）を設定
+      window.location.href = mailto;
     });
   }
 })();
