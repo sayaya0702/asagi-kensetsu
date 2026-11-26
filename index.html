@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261125h">
+<link rel="stylesheet" href="css/style.css?v=20261126b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -454,7 +454,11 @@
           <div><p class="en">Area</p><p class="v">関東全域対応</p><p class="s">埼玉・東京・神奈川・千葉・茨城・栃木・群馬</p></div>
         </div>
       </div>
-      <form class="form reveal" data-delay="1" id="contactForm" novalidate>
+      <form class="form reveal" data-delay="1" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="f67e7791-026a-448e-895c-90c4d58f4946">
+        <input type="hidden" name="subject" value="【ホームページ】お問い合わせ">
+        <input type="hidden" name="from_name" value="浅葱建設 お問い合わせフォーム">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
         <div class="field--row">
           <div class="field"><label for="f-name">お名前 <span class="req">必須</span></label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
           <div class="field"><label for="f-company">会社名</label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
@@ -478,8 +482,8 @@
         <div class="field"><label for="f-msg">お問い合わせ内容 <span class="req">必須</span></label><textarea id="f-msg" name="message" required></textarea></div>
         <label class="consent"><input type="checkbox" name="consent" required><span>「<a href="privacy-policy.html#handling" target="_blank" rel="noopener">個人情報の取り扱い</a>」の内容に同意します。</span></label>
         <button class="btn btn--primary btn--lg" type="submit" style="width:100%;justify-content:center">送信する <span class="arw">→</span></button>
-        <p class="form__note">送信ボタンを押すとメールアプリが起動し、入力内容が差し込まれます。お急ぎの場合はお電話でも承ります。</p>
-        <p class="form-msg" id="formMsg">メールアプリが開きます。内容をご確認のうえ送信してください。届き次第、折り返しご連絡いたします。</p>
+        <p class="form__note">入力いただいた内容はそのまま送信されます。お急ぎの場合はお電話でも承ります。</p>
+        <p class="form-msg" id="formMsg">お問い合わせありがとうございます。内容を確認のうえ、折り返しご連絡いたします。</p>
       </form>
     </div>
   </div>
@@ -530,6 +534,6 @@
   <a class="contact" href="#contact"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6.5 9 6 9-6"/></svg> 無料相談</a>
 </div>
 
-<script src="js/main.js?v=20261126a"></script>
+<script src="js/main.js?v=20261126b"></script>
 </body>
 </html>

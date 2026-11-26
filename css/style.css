@@ -340,6 +340,7 @@ ul{list-style:none;padding:0}
 .form__note{font-size:.78rem;color:var(--sumi-500);margin-top:.9rem;text-align:center}
 .form-msg{display:none;margin-top:1rem;padding:.9rem 1rem;border-radius:var(--radius-sm);background:rgba(21,86,94,.1);color:var(--asagi-800);font-size:.88rem;text-align:center}
 .form-msg.show{display:block}
+.form-msg.error{background:rgba(178,74,60,.12);color:#9a3b2f}
 @media(max-width:860px){.contact__wrap{grid-template-columns:1fr}.field--row{grid-template-columns:1fr}}
 
 /* ---------- Footer ---------- */

@@ -102,28 +102,32 @@
     });
   });
 
-  /* ---- Contact form -> mailto (info@asagi-kensetsu.co.jp) ---- */
+  /* ---- Contact form -> Web3Forms (info@asagi-kensetsu.co.jp) ---- */
   var form = document.getElementById("contactForm");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      var g = function (n) { var el = form.elements[n]; return el ? String(el.value).trim() : ""; };
-      var subject = "【お問い合わせ】" + (g("type") || "ご相談") + "／" + g("name");
-      var body =
-        "お名前： " + g("name") + "\n" +
-        "会社名： " + g("company") + "\n" +
-        "電話番号： " + g("tel") + "\n" +
-        "メール： " + g("email") + "\n" +
-        "ご相談内容： " + g("type") + "\n" +
-        "--------------------------------\n" +
-        g("message") + "\n";
-      var mailto = "mailto:info@asagi-kensetsu.co.jp?subject=" +
-        encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      var btn = form.querySelector('button[type="submit"]');
       var msg = document.getElementById("formMsg");
-      msg.classList.add("show");
-      msg.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
-      window.location.href = mailto;
+      var orig = btn.innerHTML;
+      btn.disabled = true; btn.textContent = "送信中…";
+      msg.classList.remove("show", "error");
+      fetch("https://api.web3forms.com/submit", { method: "POST", body: new FormData(form) })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (!j.success) throw new Error(j.message || "error");
+          msg.textContent = "お問い合わせありがとうございます。内容を確認のうえ、折り返しご連絡いたします。";
+          msg.classList.add("show");
+          form.reset();
+          msg.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+        })
+        .catch(function () {
+          msg.textContent = "送信に失敗しました。お手数ですが、お電話（048-731-8980）またはメール（info@asagi-kensetsu.co.jp）でご連絡ください。";
+          msg.classList.add("show", "error");
+          msg.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+        })
+        .then(function () { btn.disabled = false; btn.innerHTML = orig; });
     });
   }
 })();
